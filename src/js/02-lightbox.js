@@ -24,23 +24,22 @@ listEl.insertAdjacentHTML('afterbegin', galleryMarkup);
 
 // 2. реалізація делегування на div.
 
-// listEl.addEventListener('click', onImageClick);
+listEl.addEventListener('click', onImageClick);
 
-// function onImageClick(event) {
-//   event.preventDefault();
+function onImageClick(event) {
+  event.preventDefault();
 
-// перевірка на що саме відбувся клік
-//   if (event.target.nodeName !== 'IMG') {
-//     return;
-//   }
+  // перевірка на що саме відбувся клік
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
 
-// код бібліотеки
+  // код бібліотеки
 
-const lightbox = new SimpleLightbox('.gallery__item', {
-  captionSelector: 'img',
-  captionsData: 'alt',
-  captionPosition: 'bottom',
-  captionDelay: 250,
-});
-
-// }
+  const lightbox = new SimpleLightbox('.gallery__item', {
+    captionSelector: 'img',
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    captionDelay: 250,
+  });
+}
